@@ -19,7 +19,7 @@ The recipe that rebuilds the sprite from the original recordings is `tools/sfx_s
 
 ## Python packages
 
-The game depends on [FastAPI](https://fastapi.tiangolo.com/), [Uvicorn](https://www.uvicorn.org/), [HTTPX](https://www.python-httpx.org/) and
+The game depends on [FastAPI](https://fastapi.tiangolo.com/), [Uvicorn](https://uvicorn.dev/), [HTTPX](https://www.python-httpx.org/) and
 [Segno](https://github.com/heuer/segno) (all permissively licensed; see `requirements.txt`). The development tools additionally use
 [pytest](https://pytest.org/) and [Playwright](https://playwright.dev/python/). Their licences apply to them, not to this project.
 
