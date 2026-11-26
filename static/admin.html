@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏮%3C/text%3E%3C/svg%3E">
+<title>Bargain Bazaar: Host screen</title>
+<link rel="stylesheet" href="/static/common.css">
+<link rel="stylesheet" href="/static/admin.css">
+</head>
+<body class="admin">
+<div id="stage">
+
+  <header class="bar">
+    <div class="logo">
+      <span class="lantern emoji">🏮</span>
+      <div><h1>BARGAIN BAZAAR</h1><small id="shopSub">Raju Anna Stores &middot; Festive Sale</small></div>
+    </div>
+    <div id="statusPill" class="status lobby"><i></i><span>LOBBY</span></div>
+    <div class="clock"><span class="lbl">TIME LEFT</span><b id="clock">--:--</b></div>
+    <div class="stats">
+      <div><b id="stPlayers">0</b><span>shoppers</span></div>
+      <div><b id="stDeals">0</b><span>deals</span></div>
+      <div><b id="stDone">0</b><span>full bags</span></div>
+      <div><b id="stTricks">0</b><span>tricks failed</span></div>
+    </div>
+    <div class="join" id="joinBox">
+      <div id="qrSmall" class="qr"></div>
+      <div class="joininfo"><span class="lbl">JOIN AT</span><b id="joinUrl">&hellip;</b></div>
+    </div>
+  </header>
+
+  <div id="evStrip" class="evstrip" role="status" aria-live="polite"><div id="evInner" class="evinner"></div></div>
+
+  <main class="grid">
+    <section class="shop" id="shop">
+      <div class="bunting" id="bunting" aria-hidden="true"></div>
+      <div class="signboard"><small>EST. 1994 &middot; FIXED PRICE*</small><b id="signName">Raju Anna Stores</b></div>
+      <div class="awning"></div><div class="scallops"></div>
+      <div class="shelves" id="shelves"></div>
+      <div class="keeper-wrap">
+        <div id="bubble" class="bubble tail-bottom"><span class="who" id="bubWho">Raju Anna</span><span id="bubTxt">Fixed price, boss. No bargaining!*</span></div>
+        <div id="keeper" class="keeper" data-anna data-mood="neutral"></div>
+      </div>
+      <div class="counter">
+        <span class="emoji">🧮</span><span class="emoji">🧾</span><span class="sign">*Terms and conditions apply</span><span class="emoji">🪙</span>
+      </div>
+      <div id="fxLayer" class="fx-layer"></div>
+    </section>
+
+    <section class="board" id="boardPanel">
+      <h2 id="boardTitle"><span id="boardName">🏆 Leaderboard</span> <small id="boardSub"></small></h2>
+      <div id="rows" class="rows"></div>
+      <div id="lobbyBox" class="lobbybox hidden">
+        <div class="lobby-qr" id="qrBig"></div>
+        <div class="lobby-txt">
+          <h3>Scan to join the bazaar</h3>
+          <p class="url" id="joinUrlBig"></p>
+          <p class="hint">Everyone gets <b id="lobbyBudget"></b> and the same shopping list. Lowest total wins. Late joiners are welcome any time.</p>
+        </div>
+        <div class="chips" id="chips"></div>
+      </div>
+    </section>
+
+    <section class="feed">
+      <h2>🧾 Live trades</h2>
+      <ul id="trades" class="trades"></ul>
+      <h2>🗣️ Overheard at the counter</h2>
+      <ul id="lines" class="lines"></ul>
+    </section>
+  </main>
+
+  <footer class="ticker">
+    <div class="tk-label">📣 LATEST DEALS</div>
+    <div class="tk-view"><div id="tkTrack" class="tk-track"></div></div>
+  </footer>
+
+  <div id="controls" class="controls">
+    <div class="ai" id="aiChip" title="The AI writes Raju Anna's replies (text only; nothing is spoken out loud).">AI replies: &hellip;</div>
+    <label id="minsWrap" class="mins hidden">Game length <input id="mins" type="number" min="1" max="60" value="15"> min</label>
+    <button id="bStart" class="btn teal" type="button">▶ Open the shop</button>
+    <button id="bExtend" class="btn ghost hidden" type="button">+2 min</button>
+    <button id="bEnd" class="btn red hidden" type="button">⏹ End game</button>
+    <button id="bResults" class="btn hidden" type="button">📥 Results</button>
+    <button id="bPodium" class="btn hidden" type="button">🏅 Podium</button>
+    <button id="bReveal" class="btn ghost" type="button">🔒 Prices hidden</button>
+    <button id="bRush" class="btn ghost hidden" type="button" title="Shopkeeper concedes more for 45 seconds">🔥 Festive rush</button>
+    <button id="bTight" class="btn ghost hidden" type="button" title="Shopkeeper concedes less for 45 seconds">😤 Squeeze</button>
+    <button id="bClearEv" class="btn ghost hidden" type="button">✖ End event</button>
+    <button id="bTest" class="btn ghost" type="button">🧪 Test AI</button>
+    <button id="bAi" class="btn ghost" type="button" title="Turns the AI that writes Raju Anna's replies on or off. Text only, nothing is spoken out loud. OFF = ready-made lines.">🤖 AI replies</button>
+    <button id="bSfx" class="btn ghost" type="button" title="Raju Anna's little sound effects: On, Soft or Off (key M). In Teams, tick 'Include computer sound' when you share, so everyone hears them.">🔊 Sound</button>
+    <button id="bSfxTest" class="btn ghost" type="button" title="Plays every sound once with its name, so you know what to expect. Click again to stop.">🎧 Sound check</button>
+    <button id="bPlayers" class="btn ghost" type="button">👥 Players</button>
+    <button id="bNew" class="btn ghost" type="button">🔄 New game</button>
+    <button id="bFull" class="btn ghost" type="button" title="Fullscreen">⛶</button>
+    <span class="kbd">H = hide controls</span>
+  </div>
+
+  <div id="banner" class="banner hidden"></div>
+  <div id="podium" class="podium hidden"></div>
+  <div id="modal" class="modal hidden"><div class="modal-card" id="modalCard"></div></div>
+  <div id="gate" class="modal hidden"><div class="modal-card">
+    <h2>Host key needed</h2>
+    <p id="gateMsg" class="muted">Enter the admin key shown in the console where you started the game.</p>
+    <input id="gateKey" type="password" placeholder="Admin key" autocomplete="off">
+    <button id="gateGo" class="btn" type="button">Open host screen</button>
+  </div></div>
+  <div id="toast" class="toast hidden" role="status"></div>
+</div>
+<script src="/static/avatar.js"></script>
+<script src="/static/sfx.js"></script>
+<script src="/static/admin.js"></script>
+</body>
+</html>

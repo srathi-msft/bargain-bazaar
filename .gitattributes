@@ -1,0 +1,10 @@
+# Store text as LF in the repository; check out as the platform default.
+* text=auto
+
+# Windows PowerShell scripts stay CRLF everywhere.
+*.ps1 text eol=crlf
+
+# Binary files
+*.mp3 binary
+*.png binary
+*.jpg binary

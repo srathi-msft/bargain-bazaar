@@ -1,0 +1,7 @@
+# Optional: only for rebuilding / checking the sound effects (tools/build_sfx_sprite.py, sfx_check.py, sfx_sampler.py).
+# You also need ffmpeg on your PATH. The game itself does not need any of this.
+-r requirements-dev.txt
+numpy>=1.26
+scipy>=1.11
+matplotlib>=3.8
+pillow>=10

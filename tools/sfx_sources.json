@@ -1,0 +1,532 @@
+{
+ "version": 1,
+ "about": "Recipe for static/sfx/bazaar-sfx.mp3. Rebuild with: python tools/build_sfx_sprite.py. 'start'/'end' are seconds in the decoded 44.1 kHz mono source; 'speed' is a plain resample speed-up; 'gainDb' (optional) adds to the automatic loudness normalisation (never exceeds the true-peak limit). Each clip is normalised to targetLufs (BS.1770 integrated, measured on the DECODED mp3: encoderCompensationDb offsets libmp3lame's measured ~0.44 dB level loss) unless that would push true peak above truePeakDb. Sources are the public HQ preview mp3s of Freesound sounds; licence verified on each sound's own page (see licenseOnPage).",
+ "sprite": {
+  "file": "bazaar-sfx.mp3",
+  "rate": 44100,
+  "gapSeconds": 0.35,
+  "bitrateKbps": 96,
+  "targetLufs": -23.0,
+  "truePeakDb": -2.0,
+  "encoderCompensationDb": 0.44,
+  "fadeInMs": 4,
+  "defaultFadeOutMs": 60
+ },
+ "sources": {
+  "fs-170779": {
+   "title": "OneHmm-question.wav",
+   "author": "esperar",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "licenseOnPage": "Creative Commons 0 (http://creativecommons.org/publicdomain/zero/1.0/)",
+   "kind": "cc0",
+   "url": "https://freesound.org/people/esperar/sounds/170779/",
+   "download": "https://cdn.freesound.org/previews/170/170779_377731-hq.mp3",
+   "cacheFile": "fs-170779.mp3",
+   "sha256": "6063f6181e4a12f40700dbd69198249b47072b6fd1964743fbe1afceddbd42a1",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-469605": {
+   "title": "Voice Male humming - Doubting",
+   "author": "bolkmar",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "licenseOnPage": "Creative Commons 0 (http://creativecommons.org/publicdomain/zero/1.0/)",
+   "kind": "cc0",
+   "url": "https://freesound.org/people/bolkmar/sounds/469605/",
+   "download": "https://cdn.freesound.org/previews/469/469605_2927958-hq.mp3",
+   "cacheFile": "fs-469605.mp3",
+   "sha256": "23ecd220b87affd13a42d1c849ab5f80a6d01ed86eecb0f6c6bafb72420f4760",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-691913": {
+   "title": "Tsk 2",
+   "author": "hollandm",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "licenseOnPage": "Creative Commons 0 (http://creativecommons.org/publicdomain/zero/1.0/)",
+   "kind": "cc0",
+   "url": "https://freesound.org/people/hollandm/sounds/691913/",
+   "download": "https://cdn.freesound.org/previews/691/691913_5309408-hq.mp3",
+   "cacheFile": "fs-691913.mp3",
+   "sha256": "d1ddc7db882301353765a8767576c1258a81c4e4682a3a08efeda0d68589b61d",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-650243": {
+   "title": "\"Tut\" 01",
+   "author": "Alba MacKenna (Alba_Mac)",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "licenseOnPage": "Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+   "kind": "cc-by",
+   "url": "https://freesound.org/people/Alba_Mac/sounds/650243/",
+   "download": "https://cdn.freesound.org/previews/650/650243_13948524-hq.mp3",
+   "cacheFile": "fs-650243.mp3",
+   "sha256": "456266cb9ad8df400b643bd06a37a17d3fef8b21c10d6c4d2d5d915d8550ea6f",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-545203": {
+   "title": "Disapproving male grunt",
+   "author": "zeteny_zpx",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "licenseOnPage": "Creative Commons 0 (http://creativecommons.org/publicdomain/zero/1.0/)",
+   "kind": "cc0",
+   "url": "https://freesound.org/people/zeteny_zpx/sounds/545203/",
+   "download": "https://cdn.freesound.org/previews/545/545203_3036029-hq.mp3",
+   "cacheFile": "fs-545203.mp3",
+   "sha256": "d67f71679320bf4f59f74d6d50880d0067a85802648732c675f857762e610d72",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-743949": {
+   "title": "Male Pft",
+   "author": "kanyonwyvern",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "licenseOnPage": "Creative Commons 0 (http://creativecommons.org/publicdomain/zero/1.0/)",
+   "kind": "cc0",
+   "url": "https://freesound.org/people/kanyonwyvern/sounds/743949/",
+   "download": "https://cdn.freesound.org/previews/743/743949_15125504-hq.mp3",
+   "cacheFile": "fs-743949.mp3",
+   "sha256": "a6ee41733b31e8bee142dab8e9e702c53b9292541b9c98081219a68d556f949e",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-458101": {
+   "title": "deep laugh chuckle.mp3",
+   "author": "hsmith1986",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "licenseOnPage": "Creative Commons 0 (http://creativecommons.org/publicdomain/zero/1.0/)",
+   "kind": "cc0",
+   "url": "https://freesound.org/people/hsmith1986/sounds/458101/",
+   "download": "https://cdn.freesound.org/previews/458/458101_6799967-hq.mp3",
+   "cacheFile": "fs-458101.mp3",
+   "sha256": "98050d7d4028ba5ea114082867fff2befdffc212142b7dfb6e65454b8670fc6c",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-800973": {
+   "title": "Noises - Short laugh",
+   "author": "Sadiquecat",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "licenseOnPage": "Creative Commons 0 (http://creativecommons.org/publicdomain/zero/1.0/)",
+   "kind": "cc0",
+   "url": "https://freesound.org/people/Sadiquecat/sounds/800973/",
+   "download": "https://cdn.freesound.org/previews/800/800973_5287430-hq.mp3",
+   "cacheFile": "fs-800973.mp3",
+   "sha256": "4b62d5dba1725b51d21b4a9e69375d327f34712c6b075d7445188ae0b4be104b",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-536811": {
+   "title": "LaughM.ogg",
+   "author": "egomassive",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "licenseOnPage": "Creative Commons 0 (http://creativecommons.org/publicdomain/zero/1.0/)",
+   "kind": "cc0",
+   "url": "https://freesound.org/people/egomassive/sounds/536811/",
+   "download": "https://cdn.freesound.org/previews/536/536811_1415754-hq.mp3",
+   "cacheFile": "fs-536811.mp3",
+   "sha256": "88710b579d3f66bb27956e3d3406f976dd2953e46ff20990bbfbc083699bde6c",
+   "note": "trimmed, faded, normalised",
+   "credit": "original recording 'Male Laughter 01' by Arbernaut, CC0"
+  },
+  "fs-861688": {
+   "title": "Male Human Knight Voice 01 - Confident Laugh",
+   "author": "TommasoMotteran",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "licenseOnPage": "Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+   "kind": "cc-by",
+   "url": "https://freesound.org/people/TommasoMotteran/sounds/861688/",
+   "download": "https://cdn.freesound.org/previews/861/861688_18681946-hq.mp3",
+   "cacheFile": "fs-861688.mp3",
+   "sha256": "2de5069e8b428f64a0823a827c8e5f239428a0d3846ea134a93b24ec51292fab",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-246304": {
+   "title": "Ey - shouting",
+   "author": "vikuserro",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "licenseOnPage": "Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+   "kind": "cc-by",
+   "url": "https://freesound.org/people/vikuserro/sounds/246304/",
+   "download": "https://cdn.freesound.org/previews/246/246304_2833408-hq.mp3",
+   "cacheFile": "fs-246304.mp3",
+   "sha256": "10e08fc9a2113f1ec465694f3f5d564f797a731d3b09938fe68b851a0fca1057",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-345083": {
+   "title": "HEY VERY LOW 4.WAV",
+   "author": "metrostock99",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "licenseOnPage": "Creative Commons 0 (http://creativecommons.org/publicdomain/zero/1.0/)",
+   "kind": "cc0",
+   "url": "https://freesound.org/people/metrostock99/sounds/345083/",
+   "download": "https://cdn.freesound.org/previews/345/345083_1256155-hq.mp3",
+   "cacheFile": "fs-345083.mp3",
+   "sha256": "01e236d46688bf90bf3dab26a889faf6b7f55bbbdb62bc4d9db0df9cc0c9deb2",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-144258": {
+   "title": "Human-Man-Uh_Oh.wav",
+   "author": "DWOBoyle",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "licenseOnPage": "Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+   "kind": "cc-by",
+   "url": "https://freesound.org/people/DWOBoyle/sounds/144258/",
+   "download": "https://cdn.freesound.org/previews/144/144258_2289019-hq.mp3",
+   "cacheFile": "fs-144258.mp3",
+   "sha256": "be62af8eefb63002f563d12fd41f5021a5d6282aa81d835c239099171cace391",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-801391": {
+   "title": "Fear - uh ohh",
+   "author": "Sadiquecat",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "licenseOnPage": "Creative Commons 0 (http://creativecommons.org/publicdomain/zero/1.0/)",
+   "kind": "cc0",
+   "url": "https://freesound.org/people/Sadiquecat/sounds/801391/",
+   "download": "https://cdn.freesound.org/previews/801/801391_5287430-hq.mp3",
+   "cacheFile": "fs-801391.mp3",
+   "sha256": "fc71e759ce655c2f7e0d9ae92f1cdc42913dc8d91386db4fd90366d12d12e34d",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-73581": {
+   "title": "Sad Trombone.wav",
+   "author": "Benboncan",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "licenseOnPage": "Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+   "kind": "cc-by",
+   "url": "https://freesound.org/people/Benboncan/sounds/73581/",
+   "download": "https://cdn.freesound.org/previews/73/73581_634166-hq.mp3",
+   "cacheFile": "fs-73581.mp3",
+   "sha256": "3971f1c9c04e54ce41daaec2e0b8a154ee97740d4c261e9a1683592810bf9599",
+   "note": "trimmed, faded, normalised; sped up x1.15"
+  },
+  "fs-192761": {
+   "title": "Ryuuzan_shop_door_bell00.wav",
+   "author": "ryuuzan",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "licenseOnPage": "Creative Commons 0 (http://creativecommons.org/publicdomain/zero/1.0/)",
+   "kind": "cc0",
+   "url": "https://freesound.org/people/ryuuzan/sounds/192761/",
+   "download": "https://cdn.freesound.org/previews/192/192761_475267-hq.mp3",
+   "cacheFile": "fs-192761.mp3",
+   "sha256": "637e62810ac54966db8d4d399eeb6f7e87605cec3b7bafe5d1e01aadedf3be2f",
+   "note": "trimmed, faded, normalised",
+   "credit": "derived from another CC0 bell"
+  },
+  "fs-394947": {
+   "title": "Rolling shutter",
+   "author": "Areti18",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "licenseOnPage": "Creative Commons 0 (http://creativecommons.org/publicdomain/zero/1.0/)",
+   "kind": "cc0",
+   "url": "https://freesound.org/people/Areti18/sounds/394947/",
+   "download": "https://cdn.freesound.org/previews/394/394947_7320040-hq.mp3",
+   "cacheFile": "fs-394947.mp3",
+   "sha256": "cc9ca074ad83eb44f6873a9697d8cc0cdbca3d4f94aa5aedf114a499faa969aa",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-394951": {
+   "title": "Rolling shutters down",
+   "author": "Areti18",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "licenseOnPage": "Creative Commons 0 (http://creativecommons.org/publicdomain/zero/1.0/)",
+   "kind": "cc0",
+   "url": "https://freesound.org/people/Areti18/sounds/394951/",
+   "download": "https://cdn.freesound.org/previews/394/394951_7320040-hq.mp3",
+   "cacheFile": "fs-394951.mp3",
+   "sha256": "78daaeda54c5cc72437311a4e54c2023501c73bd2b04280a0cec574ea034c85b",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-184438": {
+   "title": "Cash Register Fake.wav",
+   "author": "CapsLok",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "licenseOnPage": "Creative Commons 0 (http://creativecommons.org/publicdomain/zero/1.0/)",
+   "kind": "cc0",
+   "url": "https://freesound.org/people/CapsLok/sounds/184438/",
+   "download": "https://cdn.freesound.org/previews/184/184438_850742-hq.mp3",
+   "cacheFile": "fs-184438.mp3",
+   "sha256": "efd380e06aa7abbf2e779462281f37ad3b862c44309145d60e9dcca76c1637b2",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-361346": {
+   "title": "slot machine payout.wav",
+   "author": "jack126guy",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "licenseOnPage": "Creative Commons 0 (http://creativecommons.org/publicdomain/zero/1.0/)",
+   "kind": "cc0",
+   "url": "https://freesound.org/people/jack126guy/sounds/361346/",
+   "download": "https://cdn.freesound.org/previews/361/361346_5506271-hq.mp3",
+   "cacheFile": "fs-361346.mp3",
+   "sha256": "e88df32f0e49441893110506a0e430acdeb0eb639946ad898e8b7bf6bc971a6f",
+   "note": "trimmed, faded, normalised",
+   "credit": "coin parts isolated from 'quarters from machine.wav' by DisasterServices, CC0"
+  },
+  "fs-254049": {
+   "title": "Definitely a real trumpet fanfare",
+   "author": "pfranzen",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "licenseOnPage": "Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+   "kind": "cc-by",
+   "url": "https://freesound.org/people/pfranzen/sounds/254049/",
+   "download": "https://cdn.freesound.org/previews/254/254049_3482490-hq.mp3",
+   "cacheFile": "fs-254049.mp3",
+   "sha256": "b5a2fd2edb4407338714a91d9974b09ff65e7262358204dd220f9bbde8da8349",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-194625": {
+   "title": "Trumpet1.wav",
+   "author": "Harbour11",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "licenseOnPage": "Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+   "kind": "cc-by",
+   "url": "https://freesound.org/people/Harbour11/sounds/194625/",
+   "download": "https://cdn.freesound.org/previews/194/194625_3544016-hq.mp3",
+   "cacheFile": "fs-194625.mp3",
+   "sha256": "84d25048dec60079804543260a31b34419deafbb1e751c32117416f29b2dec17",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-182539": {
+   "title": "Bhangra rhythm 2",
+   "author": "sankalp",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "licenseOnPage": "Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+   "kind": "cc-by",
+   "url": "https://freesound.org/people/sankalp/sounds/182539/",
+   "download": "https://cdn.freesound.org/previews/182/182539_1859932-hq.mp3",
+   "cacheFile": "fs-182539.mp3",
+   "sha256": "ff0b93f271c0a719e16d4aedee5d8ada3b556463cf57e505ad52aef28a35eee9",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-573282": {
+   "title": "Timpani 4.wav",
+   "author": "Sorinious_Genious",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "licenseOnPage": "Creative Commons 0 (http://creativecommons.org/publicdomain/zero/1.0/)",
+   "kind": "cc0",
+   "url": "https://freesound.org/people/Sorinious_Genious/sounds/573282/",
+   "download": "https://cdn.freesound.org/previews/573/573282_12517458-hq.mp3",
+   "cacheFile": "fs-573282.mp3",
+   "sha256": "a3e3228239a429a4977a87b86661bac7e354c314f1015de3a51cd2bfb07208e6",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-116779": {
+   "title": "Ringing bell - happy.wav",
+   "author": "domrodrig",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "licenseOnPage": "Creative Commons 0 (http://creativecommons.org/publicdomain/zero/1.0/)",
+   "kind": "cc0",
+   "url": "https://freesound.org/people/domrodrig/sounds/116779/",
+   "download": "https://cdn.freesound.org/previews/116/116779_1550701-hq.mp3",
+   "cacheFile": "fs-116779.mp3",
+   "sha256": "96bba1a215f617781bd7de83b924f8a6d67752146b984915c3a4d3fea9e1a203",
+   "note": "trimmed, faded, normalised"
+  },
+  "fs-439186": {
+   "title": "Pop 5.ogg",
+   "author": "FourthWoods",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "licenseOnPage": "Creative Commons 0 (http://creativecommons.org/publicdomain/zero/1.0/)",
+   "kind": "cc0",
+   "url": "https://freesound.org/people/FourthWoods/sounds/439186/",
+   "download": "https://cdn.freesound.org/previews/439/439186_7268008-hq.mp3",
+   "cacheFile": "fs-439186.mp3",
+   "sha256": "64434dde9a40d03b520141617423ecf7dea5ec5de972ac5d7b2c59aee8fc0a36",
+   "note": "trimmed, faded, normalised"
+  }
+ },
+ "clips": [
+  {
+   "name": "hmm",
+   "source": "fs-170779",
+   "start": 0.0,
+   "end": 0.75,
+   "fadeOutMs": 50
+  },
+  {
+   "name": "hmm",
+   "source": "fs-469605",
+   "start": 0.02,
+   "end": 0.905
+  },
+  {
+   "name": "tsk",
+   "source": "fs-691913",
+   "start": 0.008,
+   "end": 0.2
+  },
+  {
+   "name": "tsk",
+   "source": "fs-650243",
+   "start": 0.0,
+   "end": 0.14,
+   "fadeOutMs": 50
+  },
+  {
+   "name": "hmph",
+   "source": "fs-545203",
+   "start": 0.105,
+   "end": 0.59
+  },
+  {
+   "name": "hmph",
+   "source": "fs-743949",
+   "start": 0.235,
+   "end": 0.66
+  },
+  {
+   "name": "heh",
+   "source": "fs-458101",
+   "start": 0.13,
+   "end": 0.93
+  },
+  {
+   "name": "heh",
+   "source": "fs-800973",
+   "start": 0.045,
+   "end": 0.78
+  },
+  {
+   "name": "laugh",
+   "source": "fs-536811",
+   "start": 0.12,
+   "end": 1.25,
+   "fadeOutMs": 80
+  },
+  {
+   "name": "laugh",
+   "source": "fs-861688",
+   "start": 0.035,
+   "end": 1.0,
+   "fadeOutMs": 80
+  },
+  {
+   "name": "shout",
+   "source": "fs-246304",
+   "start": 0.105,
+   "end": 0.72
+  },
+  {
+   "name": "shout",
+   "source": "fs-345083",
+   "start": 0.09,
+   "end": 0.47
+  },
+  {
+   "name": "raise",
+   "source": "fs-144258",
+   "start": 0.065,
+   "end": 0.5
+  },
+  {
+   "name": "raise",
+   "source": "fs-801391",
+   "start": 0.0,
+   "end": 0.62
+  },
+  {
+   "name": "wail",
+   "source": "fs-73581",
+   "start": 0.65,
+   "end": 3.38,
+   "fadeOutMs": 80,
+   "speed": 1.15
+  },
+  {
+   "name": "door",
+   "source": "fs-192761",
+   "start": 0.012,
+   "end": 0.93,
+   "fadeOutMs": 80
+  },
+  {
+   "name": "open",
+   "source": "fs-394947",
+   "start": 0.22,
+   "end": 2.55,
+   "fadeOutMs": 80
+  },
+  {
+   "name": "close",
+   "source": "fs-394951",
+   "start": 1.62,
+   "end": 3.56,
+   "fadeOutMs": 80
+  },
+  {
+   "name": "deal",
+   "source": "fs-184438",
+   "start": 0.085,
+   "end": 1.62,
+   "fadeOutMs": 80
+  },
+  {
+   "name": "dealBig",
+   "source": "fs-361346",
+   "start": 0.0,
+   "end": 2.38,
+   "fadeOutMs": 80
+  },
+  {
+   "name": "tada",
+   "source": "fs-254049",
+   "start": 0.025,
+   "end": 1.17
+  },
+  {
+   "name": "fanfare",
+   "source": "fs-194625",
+   "start": 0.44,
+   "end": 2.82,
+   "fadeOutMs": 80
+  },
+  {
+   "name": "rush",
+   "source": "fs-182539",
+   "start": 1.85,
+   "end": 4.03,
+   "fadeOutMs": 80
+  },
+  {
+   "name": "tight",
+   "source": "fs-573282",
+   "start": 0.0,
+   "end": 1.98,
+   "fadeOutMs": 80
+  },
+  {
+   "name": "bell",
+   "source": "fs-116779",
+   "start": 0.285,
+   "end": 1.66,
+   "fadeOutMs": 80
+  },
+  {
+   "name": "pop",
+   "source": "fs-439186",
+   "start": 0.03,
+   "end": 0.135,
+   "fadeOutMs": 40
+  }
+ ]
+}

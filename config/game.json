@@ -1,0 +1,19 @@
+{
+  "title": "BARGAIN BAZAAR",
+  "shop_name": "Raju Anna Stores",
+  "shopkeeper": "Raju Anna",
+  "currency": "₹",
+  "budget": 9200,
+  "duration_min": 20,
+  "max_players": 150,
+  "sound": {"host": "on", "players": "on"},
+  "items": [
+    {"id": "backpack",   "name": "Laptop Backpack",  "emoji": "🎒", "list": 1999, "floor_min": 860,  "floor_max": 1200},
+    {"id": "watch",      "name": "Analog Watch",     "emoji": "⌚", "list": 2495, "floor_min": 1070, "floor_max": 1500},
+    {"id": "earbuds",    "name": "Wireless Earbuds", "emoji": "🎧", "list": 2499, "floor_min": 1075, "floor_max": 1500},
+    {"id": "sunglasses", "name": "UV Sunglasses",    "emoji": "🕶️", "list": 1299, "floor_min": 560,  "floor_max": 780},
+    {"id": "tshirt",     "name": "Cotton T-shirt",   "emoji": "👕", "list": 999,  "floor_min": 430,  "floor_max": 600},
+    {"id": "umbrella",   "name": "3-fold Umbrella",  "emoji": "☂️", "list": 699,  "floor_min": 300,  "floor_max": 420}
+  ],
+  "difficulty": {}
+}

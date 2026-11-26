@@ -1,0 +1,113 @@
+/* Bargain Bazaar: shared look. Warm festive-market palette; no religious symbols. */
+:root {
+  --bg: #140d2b;
+  --bg2: #21154d;
+  --panel: rgba(255, 255, 255, .07);
+  --panel-2: rgba(255, 255, 255, .11);
+  --line: rgba(255, 255, 255, .14);
+  --gold: #ffc233;
+  --saffron: #ff8a1f;
+  --teal: #19c3b1;
+  --red: #ff4d6d;
+  --green: #3ddc84;
+  --cream: #fff3d6;
+  --text: #f6f1ff;
+  --muted: #b9acd8;
+  --ink: #2a1a05;
+  --radius: 16px;
+  --font: "Segoe UI", "Nirmala UI", system-ui, -apple-system, "Noto Sans", "Noto Sans Devanagari", "Noto Sans Tamil", "Noto Sans Telugu", Roboto, Arial, sans-serif;
+  --emoji: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: var(--font); }
+button { font-family: inherit; cursor: pointer; }
+.hidden { display: none !important; }
+.emoji { font-family: var(--emoji); }
+
+/* ---------- buttons ---------- */
+.btn {
+  border: 0; border-radius: 12px; padding: .7em 1.1em; font-weight: 700; font-size: 1em; color: var(--ink);
+  background: linear-gradient(#ffd45e, #ffb21f); box-shadow: 0 3px 0 #c98200, 0 6px 14px rgba(0, 0, 0, .3);
+  transition: transform .08s, filter .15s;
+}
+.btn:hover { filter: brightness(1.06); }
+.btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #c98200, 0 3px 8px rgba(0, 0, 0, .3); }
+.btn[disabled] { filter: grayscale(.8) brightness(.7); cursor: not-allowed; transform: none; }
+.btn.ghost { background: var(--panel-2); color: var(--text); box-shadow: inset 0 0 0 1px var(--line); }
+.btn.teal { background: linear-gradient(#37e0cd, #12a999); box-shadow: 0 3px 0 #0b6f65, 0 6px 14px rgba(0, 0, 0, .3); color: #04332e; }
+.btn.red { background: linear-gradient(#ff7a92, #e0364f); box-shadow: 0 3px 0 #9c1d31, 0 6px 14px rgba(0, 0, 0, .3); color: #fff; }
+/* sound buttons: they pulse while the browser still waits for a first tap before it lets sound play */
+@keyframes sfxpulse { 50% { box-shadow: 0 0 0 5px rgba(255, 194, 51, .5); } }
+.btn.locked, .sfxbtn.locked { animation: sfxpulse 1.4s ease-in-out infinite; }
+
+/* ---------- Raju Anna (SVG avatar, moods via data-mood) ---------- */
+.anna { display: block; width: 100%; height: 100%; overflow: visible; }
+.anna svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.anna .bob { animation: bj-bob 3.6s ease-in-out infinite; transform-origin: 50% 100%; }
+@keyframes bj-bob { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-3px) } }
+.anna [data-part] { transition: transform .25s ease, opacity .2s ease; transform-box: fill-box; transform-origin: center; }
+
+/* mouths: only one visible */
+.anna .m { display: none; }
+.anna[data-mood="neutral"] .m-flat, .anna[data-mood="unimpressed"] .m-flat { display: inline; }
+.anna[data-mood="thinking"] .m-side { display: inline; }
+.anna[data-mood="annoyed"] .m-frown { display: inline; }
+.anna[data-mood="smirk"] .m-smirk { display: inline; }
+.anna[data-mood="pleased"] .m-laugh { display: inline; }
+.anna[data-mood="sobbing"] .m-wail { display: inline; }
+.anna[data-mood="shout"] .m-shout { display: inline; }
+
+/* eyes */
+.anna .eye-happy { opacity: 0; }
+.anna[data-mood="pleased"] .eye-happy, .anna[data-mood="sobbing"] .eye-happy { opacity: 1; }
+.anna[data-mood="pleased"] .eyeball, .anna[data-mood="sobbing"] .eyeball { opacity: 0; }
+.anna .lid { transform: scaleY(0); transform-origin: 50% 0; }
+.anna[data-mood="unimpressed"] .lid { transform: scaleY(.55); }
+.anna[data-mood="smirk"] .lid { transform: scaleY(.35); }
+.anna[data-mood="annoyed"] .lid { transform: scaleY(.3); }
+.anna[data-mood="neutral"] .lid { animation: bj-blink 5s infinite; }
+@keyframes bj-blink { 0%, 92%, 100% { transform: scaleY(0) } 95% { transform: scaleY(1) } }
+.anna[data-mood="thinking"] .pupil { transform: translate(5px, -5px); }
+
+/* brows */
+.anna[data-mood="annoyed"] .brow-l, .anna[data-mood="shout"] .brow-l { transform: translateY(6px) rotate(16deg); }
+.anna[data-mood="annoyed"] .brow-r, .anna[data-mood="shout"] .brow-r { transform: translateY(6px) rotate(-16deg); }
+.anna[data-mood="thinking"] .brow-r { transform: translateY(-7px) rotate(-8deg); }
+.anna[data-mood="thinking"] .brow-l { transform: translateY(2px); }
+.anna[data-mood="pleased"] .brow-l, .anna[data-mood="pleased"] .brow-r { transform: translateY(-6px); }
+.anna[data-mood="sobbing"] .brow-l { transform: translateY(-3px) rotate(-14deg); }
+.anna[data-mood="sobbing"] .brow-r { transform: translateY(-3px) rotate(14deg); }
+.anna[data-mood="smirk"] .brow-r { transform: translateY(-8px) rotate(-6deg); }
+.anna[data-mood="unimpressed"] .brow-l, .anna[data-mood="unimpressed"] .brow-r { transform: translateY(3px); }
+
+/* extras */
+.anna .blush { opacity: 0; }
+.anna[data-mood="pleased"] .blush { opacity: .55; }
+.anna .tears, .anna .anger { opacity: 0; }
+.anna[data-mood="sobbing"] .tears { opacity: 1; }
+.anna[data-mood="shout"] .anger, .anna[data-mood="annoyed"] .anger { opacity: 1; }
+.anna .tear { animation: bj-tear 1.1s ease-in infinite; }
+.anna .tear.t2 { animation-delay: .5s; }
+@keyframes bj-tear { 0% { transform: translateY(-4px); opacity: 0 } 25% { opacity: 1 } 100% { transform: translateY(34px); opacity: 0 } }
+.anna[data-mood="shout"] .bob { animation: bj-shake .25s linear infinite; }
+@keyframes bj-shake { 0%, 100% { transform: translateX(0) } 25% { transform: translateX(-3px) } 75% { transform: translateX(3px) } }
+.anna[data-mood="sobbing"] .bob { animation: bj-sob .6s ease-in-out infinite; }
+@keyframes bj-sob { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(4px) } }
+
+/* speech bubble */
+.bubble {
+  position: relative; background: #fffdf4; color: var(--ink); border-radius: 18px; padding: .7em .95em; font-weight: 600;
+  line-height: 1.3; box-shadow: 0 6px 18px rgba(0, 0, 0, .35); max-width: 100%;
+}
+.bubble::after {
+  content: ""; position: absolute; width: 18px; height: 18px; background: inherit; transform: rotate(45deg);
+  border-radius: 3px;
+}
+.bubble.tail-bottom::after { bottom: -8px; left: 38px; }
+.bubble.tail-left::after { left: -7px; top: 22px; }
+.bubble .who { display: block; font-size: .72em; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: #a35a00; margin-bottom: .15em; }
+.pop { animation: pop .35s cubic-bezier(.2, 1.6, .4, 1); }
+@keyframes pop { from { transform: scale(.7); opacity: 0 } to { transform: scale(1); opacity: 1 } }
+
+/* ---------- coins & confetti ---------- */
+.fly { position: fixed; pointer-events: none; z-index: 60; font-family: var(--emoji); will-change: transform, opacity; }

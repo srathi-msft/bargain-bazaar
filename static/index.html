@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#140d2b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏮%3C/text%3E%3C/svg%3E">
+<title>Bargain Bazaar</title>
+<link rel="stylesheet" href="/static/common.css">
+<link rel="stylesheet" href="/static/player.css">
+</head>
+<body>
+<div id="app">
+
+  <header id="top" class="top hidden">
+    <div class="brand"><span class="emoji">🏮</span> <span id="shopName">Raju Anna Stores</span><button id="btnSfx" class="sfxbtn" type="button" aria-label="Sound effects" title="Raju Anna's little sound effects. Tap to switch on or off.">🔊</button></div>
+    <div class="pills">
+      <div class="pill wallet"><span class="lbl">WALLET</span><b id="wallet">₹0</b></div>
+      <div class="pill"><span class="lbl">RANK</span><b id="rank">–</b></div>
+      <div class="pill" id="timerPill"><span class="lbl">TIME LEFT</span><b id="timer">--:--</b></div>
+    </div>
+    <div class="eventbar hidden" data-eventbar role="status"></div>
+  </header>
+
+  <main>
+    <section id="sJoin" class="screen">
+      <div class="hero">
+        <div class="hero-av"><div data-anna data-mood="smirk"></div></div>
+        <div class="hero-text">
+          <h1>BARGAIN BAZAAR</h1>
+          <p class="tag">Festive sale at <b class="keeperShop">Raju Anna Stores</b>. Fixed prices*</p>
+          <p class="fine">*Not actually fixed. <span class="keeperName">Raju Anna</span> just doesn't like to admit it.</p>
+        </div>
+      </div>
+      <div class="card">
+        <label for="name">Your name on the leaderboard</label>
+        <input id="name" minlength="4" maxlength="18" autocomplete="off" placeholder="e.g. Priya Sharma">
+        <p class="hint">At least 4 characters. You can type to <span class="keeperName">Raju Anna</span> in English or in your own language: हिंदी, தமிழ், తెలుగు, ಕನ್ನಡ, മലയാളം, मराठी, বাংলা&hellip;</p>
+        <button id="btnJoin" class="btn big">Enter the bazaar</button>
+        <p id="joinErr" class="err"></p>
+      </div>
+      <div class="card how">
+        <h2>How it works</h2>
+        <ol>
+          <li>You get <b class="howBudget">₹9,200</b> and a shopping list of <b>6 things</b>. Sticker prices add up to more than you have.</li>
+          <li>Tap an item and <b>haggle</b> with <span class="keeperName">Raju Anna</span>. Offer a price <b>and a reason</b>, like <i>"I saw the backpack on Amazon for 1,500, can you do 1,450?"</i>. Happy with his price? Press <b>Buy</b>. Typing "deal" never buys by accident.</li>
+          <li><span class="keeperName">Raju Anna</span> is tough and every shopper meets a different Anna. Be friendly and specific and he softens; be rude, pushy or lowball and he digs in, and may even put the price up.</li>
+          <li>Fill your bag for the <b>lowest total</b> to win. A full bag always beats a half-full one. Tie? The earlier finisher wins. Joining late is fine: the clock is shared and your wallet is full.</li>
+        </ol>
+      </div>
+      <p class="fine credits"><span class="keeperName">Raju Anna</span>'s sounds are recordings by Freesound creators (CC0 / CC BY). <a href="/credits">Sound credits</a></p>
+    </section>
+
+    <section id="sLobby" class="screen hidden">
+      <div class="lobby">
+        <div class="lobby-av"><div data-anna data-mood="neutral"></div></div>
+        <h2><span class="keeperName">Raju Anna</span> is opening the shutters&hellip;</h2>
+        <p>Welcome, <b id="lobbyName"></b>! You're in. Your wallet: <b class="howBudget"></b>.</p>
+        <p class="muted"><span id="lobbyN">1</span> shopper(s) waiting inside. The shop opens when the host says go.</p>
+      </div>
+      <div class="card how">
+        <h2>Quick tips</h2>
+        <ul>
+          <li>Offer a <b>number</b>: "I'll pay 1,400" or "make it 1,350". Numbers in your own script work too.</li>
+          <li>Give him a <b>reason</b>, like a cheaper price you saw elsewhere (say the price), a flaw you spotted, buying more than one thing, a good joke. Specific beats generic, and the same reason twice works less.</li>
+          <li>He is a real shopkeeper with moods: be friendly and he softens; shout, bully or lowball and he digs in, and he may even <b>put the price up</b>. Watch his mood face and the patience dots.</li>
+          <li><b>Walk away</b> can work once per item, but only after real haggling, and he may just let you go.</li>
+          <li>Flattery, begging and tricks never work on a man with 30 years of experience.</li>
+          <li>🔊 <span class="keeperName">Raju Anna</span> makes little sounds (a hmm, a tsk, a cash register). Not for you? Tap the 🔊 at the top to switch them off.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="sShop" class="screen hidden">
+      <div class="progress card">
+        <div><span class="lbl">IN YOUR BAG</span><b id="bagN">0/6</b></div>
+        <div><span class="lbl">SPENT</span><b id="spent">₹0</b></div>
+        <div><span class="lbl">SAVED</span><b id="saved">0%</b></div>
+      </div>
+      <div id="shelf" class="shelf"></div>
+      <div class="two">
+        <div class="card">
+          <h3>🔥 Latest deals</h3>
+          <ul id="miniDeals" class="mini"></ul>
+        </div>
+        <div class="card">
+          <h3>🏆 Leaderboard</h3>
+          <ol id="miniBoard" class="mini board"></ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="sEnd" class="screen hidden">
+      <div class="card result">
+        <h2>The bazaar is closed!</h2>
+        <p id="endLine" class="big"></p>
+        <p id="endSub" class="muted"></p>
+      </div>
+      <div id="endAwards" class="awards"></div>
+      <div class="card"><h3>🏆 Final leaderboard</h3><ol id="endBoard" class="mini board"></ol></div>
+      <p class="muted center">Thanks for playing! Tell the host what you thought.</p>
+    </section>
+  </main>
+
+  <div id="sheet" class="sheet hidden" role="dialog" aria-modal="true" aria-label="Haggle with the shopkeeper">
+    <div class="sheet-card">
+      <div class="eventbar hidden" data-eventbar role="status"></div>
+      <div class="sheet-head">
+        <button id="btnBack" class="btn ghost small" type="button">&larr; Shelf</button>
+        <div class="sheet-title"><span id="shEmoji" class="emoji"></span> <b id="shName"></b><small id="shList"></small></div>
+      </div>
+      <div class="sheet-top">
+        <button id="btnSfx2" class="sfxbtn" type="button" aria-label="Sound effects" title="Raju Anna's little sound effects. Tap to switch on or off.">🔊</button>
+        <div class="keeper"><div id="shAv" data-anna data-mood="neutral"></div></div>
+        <div class="askbox">
+          <span class="lbl"><span class="keeperUpper">RAJU ANNA</span> ASKS</span><b id="shAsk">₹0</b>
+          <span class="lbl pl">PATIENCE</span><div id="patience" class="patience"></div>
+          <span class="lbl pl">HIS MOOD</span><div id="vibe" class="vibe neutral" title="How he feels about you right now. Be friendly and give a real reason; shout or bully and he digs in."></div>
+          <span id="finalTag" class="finaltag hidden">FINAL PRICE: buy it, or try walking away</span>
+        </div>
+      </div>
+      <div id="chat" class="chat" aria-live="polite"></div>
+      <div class="sheet-foot">
+        <div class="quick">
+          <button id="btnBuy" class="btn teal" type="button">Buy</button>
+          <button id="btnWalk" class="btn ghost" type="button">🚶 Walk away</button>
+        </div>
+        <form id="chatForm" autocomplete="off">
+          <input id="msg" maxlength="200" placeholder="Make your offer… e.g. I'll pay 1400" enterkeyhint="send" autocomplete="off" lang="">
+          <button id="btnSend" class="btn" type="submit">Send</button>
+        </form>
+        <p class="langhint">English, हिंदी, தமிழ், తెలుగు, ಕನ್ನಡ, മലയാളം, मराठी, বাংলা&hellip; he understands them all.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay hidden"><div class="overlay-card"></div></div>
+  <div id="toast" class="toast hidden" role="status"></div>
+</div>
+<script src="/static/avatar.js"></script>
+<script src="/static/sfx.js"></script>
+<script src="/static/player.js"></script>
+</body>
+</html>
